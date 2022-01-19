@@ -32,35 +32,35 @@ from examples.variants import parse_domain_and_task, get_variants
 
 ENVIRONMENTS = {
     'swimmer-gym': {
-        'default': lambda: GymEnv('Swimmer-v1'),
+        'default': lambda: GymEnv('Swimmer-v2'),
     },
     'swimmer-rllab': {
         'default': SwimmerEnv,
         'multi-direction': MultiDirectionSwimmerEnv,
     },
     'ant': {
-        'default': lambda: GymEnv('Ant-v1'),
+        'default': lambda: GymEnv('Ant-v2'),
         'multi-direction': MultiDirectionAntEnv,
         'cross-maze': CrossMazeAntEnv
     },
     'humanoid-gym': {
-        'default': lambda: GymEnv('Humanoid-v1')
+        'default': lambda: GymEnv('Humanoid-v2')
     },
     'humanoid-rllab': {
         'default': HumanoidEnv,
         'multi-direction': MultiDirectionHumanoidEnv,
     },
     'hopper': {
-        'default': lambda: GymEnv('Hopper-v1')
+        'default': lambda: GymEnv('Hopper-v2')
     },
     'half-cheetah': {
-        'default': lambda: GymEnv('HalfCheetah-v1')
+        'default': lambda: GymEnv('HalfCheetah-v2')
     },
     'walker': {
-        'default': lambda: GymEnv('Walker2d-v1')
+        'default': lambda: GymEnv('Walker2d-v2')
     },
     'humanoid-standup-gym': {
-        'default': lambda: GymEnv('HumanoidStandup-v1')
+        'default': lambda: GymEnv('HumanoidStandup-v2')
     }
 }
 
