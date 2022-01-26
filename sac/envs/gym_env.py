@@ -7,7 +7,7 @@ import traceback
 import logging
 
 try:
-    from gym.wrappers.monitoring import logger as monitor_logger
+    from gym import logger as monitor_logger
 
     monitor_logger.setLevel(logging.WARNING)
 except Exception as e:
@@ -133,10 +133,7 @@ class GymEnv(Env, Serializable):
             if self._log_dir is not None:
                 print("""
     ***************************
-
     Training finished! You can upload results to OpenAI Gym by running the following command:
-
     python scripts/submit_gym.py %s
-
     ***************************
                 """ % self._log_dir)
