@@ -32,7 +32,10 @@ def run_sac_experiment(main, mode, include_folders=None, log_dir=None,
             DEFAULT_LOG_DIR,
             "local",
             exp_prefix.replace("_", "-"),
-            exp_name)
+            exp_name,
+            "exp" + str(kwargs["seed"]))
+    else:
+        log_dir = os.path.join(log_dir, "iter" + str(kwargs["seed"]))
 
     if include_folders is None:
         include_folders = list()
