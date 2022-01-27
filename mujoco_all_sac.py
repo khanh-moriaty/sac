@@ -84,6 +84,7 @@ def parse_args():
                         type=str,
                         choices=('gaussian', 'gmm', 'lsp'),
                         default='gaussian')
+    parser.add_argument('--steps', type=int, default=1e6)
     parser.add_argument('--env', type=str, default=DEFAULT_ENV)
     parser.add_argument('--exp_name', type=str, default=timestamp())
     parser.add_argument('--mode', type=str, default='local')
@@ -239,7 +240,7 @@ def main():
         domain, task = parse_domain_and_task(args.env)
 
     variant_generator = get_variants(
-        domain=domain, task=task, policy=args.policy)
+        domain=domain, task=task, policy=args.policy, steps=args.steps)
     launch_experiments(variant_generator, args)
     plot_all_experiments(args.log_dir, args.env)
 
