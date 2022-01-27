@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def plot_all_experiments(log_folder, env_name):
     dir = os.listdir(log_folder)
-    results_dir = '/results/'
+    print(log_folder)
     list_folder = []
     df = pd.DataFrame()
     newpath = ''
@@ -15,7 +15,7 @@ def plot_all_experiments(log_folder, env_name):
 
     num_experiments = len(list_folder)
     for i in range(num_experiments):
-        newpath = log_folder + '/' + list_folder[i] + '/progress.csv'
+        newpath = log_folder + list_folder[i] + '/progress.csv'
         df.insert(i,i,pd.read_csv(newpath)['return-average'][:200])
 
     mean = []
@@ -35,4 +35,4 @@ def plot_all_experiments(log_folder, env_name):
     plt.title(name)
     plt.fill_between(x, (mean-ci), (mean+ci), color='blue', alpha=0.1)
     plt.legend()
-    plt.savefig(results_dir + name)
+    plt.savefig(log_folder + name)
