@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 
 def plot_all_experiments(log_folder, env_name):
     dir = os.listdir(log_folder)
-    print(log_folder)
     list_folder = []
     df = pd.DataFrame()
     newpath = ''
