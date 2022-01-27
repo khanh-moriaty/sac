@@ -84,7 +84,7 @@ def parse_args():
                         type=str,
                         choices=('gaussian', 'gmm', 'lsp'),
                         default='gaussian')
-    parser.add_argument('--steps', type=int, default=1e6)
+    parser.add_argument('--steps', type=int, default=1e3)
     parser.add_argument('--env', type=str, default=DEFAULT_ENV)
     parser.add_argument('--exp_name', type=str, default=timestamp())
     parser.add_argument('--mode', type=str, default='local')
