@@ -13,7 +13,7 @@ RUN apt-get -y update && apt-get -y install ffmpeg && \
     rm -rf __pycache__ && \
     pip install 'tensorflow-gpu==1.14'
 
-RUN cd / && git clone https://github.com/Picooooo/rllab.git && \
+RUN cd / && git clone https://github.com/Kaito-Kido/rllab.git && \
     apt-get install -y wget && \
     wget -P . https://www.roboti.us/download/mjpro131_linux.zip && \
     unzip mjpro131_linux.zip && \

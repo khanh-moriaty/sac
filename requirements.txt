@@ -11,3 +11,4 @@ Lasagne @ https://github.com/Lasagne/Lasagne/archive/master.zip
 Theano @ https://github.com/Theano/Theano/archive/master.zip
 gym==0.9.6
 mujoco-py
+cloudpickle
