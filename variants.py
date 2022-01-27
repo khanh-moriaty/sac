@@ -348,7 +348,8 @@ def parse_domain_and_task(env_name):
     task = next((task for task in domain_tasks if task in env_name), 'default')
     return domain, task
 
-def get_variants(domain, task, policy):
+def get_variants(domain, task, policy, steps):
+    ALGORITHM_PARAMS[domain]["base_kwargs"]["n_epochs"] = steps
     params = {
         'prefix': '{}/{}'.format(domain, task),
         'domain': domain,
